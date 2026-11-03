@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Letícia Fonseca · Portfólio</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#aeb897; --grid:#a2ad8a; --olive:#5d6b3a; --olive-d:#3f4a25;
+  --ink:#232618; --paper:#d8dfc3; --orange:#ee7d1e; --pink:#ff7fa5;
+  --lime:#c4f04f; --purple:#7a5cff; --yellow:#ffd95a; --mint:#a8e6cf;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#26281d; --grid:#3a3d2b; --paper:#34372a; --ink:#f3ecd2; --olive:#7f8a4f; --olive-d:#5b6439;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#26281d; --grid:#3a3d2b; --paper:#34372a; --ink:#f3ecd2; --olive:#7f8a4f; --olive-d:#5b6439;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; min-height:100vh; color:var(--ink);
+  font-family:"Space Mono",ui-monospace,Menlo,Consolas,monospace;
+  background-color:var(--bg);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:28px 28px;
+  padding-bottom:calc(84px + env(safe-area-inset-bottom,0px));
+}
+.title{
+  text-align:center; font-size:clamp(2.2rem,8vw,5rem); letter-spacing:.08em;
+  font-family:"Silkscreen","Space Mono",monospace; color:var(--olive-d); margin:24px 0 8px; font-weight:700;
+}
+.sub{text-align:center;margin:0 0 20px;font-size:.95rem}
+.icons{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin:10px 16px 24px}
+.icon{
+  background:none;border:0;cursor:pointer;color:var(--ink);font:inherit;font-size:.8rem;
+  display:flex;flex-direction:column;align-items:center;gap:6px;width:84px;
+}
+.icon .g{
+  width:56px;height:46px;border:2px solid var(--ink);border-radius:0;
+  display:grid;place-items:center;font-size:1.6rem;box-shadow:3px 3px 0 var(--ink);
+}
+.icon:hover .g{transform:translate(-1px,-1px)}
+.icon:focus-visible{outline:2px dashed var(--orange);outline-offset:4px}
+.wins{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;padding:0 16px;align-items:flex-start}
+.win{
+  width:min(100%,460px);background:var(--paper);border:2px solid var(--ink);
+  border-radius:0;box-shadow:4px 4px 0 var(--ink);overflow:hidden;
+}
+.win.hidden{display:none}
+.bar{
+  background:var(--olive);color:#fff;display:flex;justify-content:space-between;align-items:center;
+  padding:5px 8px;font-family:"Silkscreen","Space Mono",monospace;font-weight:400;border-bottom:2px solid var(--ink);font-size:.75rem;letter-spacing:.04em;
+}
+.x{
+  background:#ee6a6a;border:2px solid var(--ink);color:#fff;border-radius:0;
+  width:24px;height:22px;line-height:1;cursor:pointer;font:inherit;font-weight:700;
+}
+.body{padding:18px}
+.me{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.avatar{
+  width:110px;height:110px;border-radius:0;border:2px solid var(--ink);
+  background:var(--pink);display:grid;place-items:center;font-size:3rem;flex:none;
+}
+h1,h2,h3{margin:0}
+.hi{font-size:1.1rem}
+.name{font-size:1.8rem;line-height:1.05;color:var(--orange);font-weight:700}
+.role{font-size:.8rem;margin-top:6px}
+.quote{font-style:italic;font-size:.85rem;margin-top:10px}
+p{line-height:1.55;font-size:.9rem;margin:12px 0 0}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.tag{border:2px solid var(--ink);border-radius:0;padding:3px 8px;font-size:.78rem;background:var(--yellow);color:#2b2d1f;font-weight:700}
+.tag.b{background:var(--mint)} .tag.c{background:var(--pink)} .tag.d{background:var(--lime)} .tag.e{background:#cdbcff}
+.proj{
+  display:block;text-decoration:none;color:var(--ink);border:2px solid var(--ink);
+  border-radius:0;padding:12px;margin-bottom:12px;background:var(--bg);box-shadow:3px 3px 0 var(--ink);
+}
+.proj:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+.proj{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.proj .pi{flex:1 1 180px}
+.proj b{display:block;margin-bottom:4px}
+.btns{display:flex;flex-direction:column;gap:8px;flex:none}
+.btn{display:block;text-align:center;text-decoration:none;color:#2b2d1f;background:var(--lime);border:2px solid var(--ink);border-radius:0;padding:6px 10px;font-size:.78rem;font-weight:700;box-shadow:2px 2px 0 var(--ink)}
+.btn.gh{background:var(--paper);color:var(--ink)}
+.btn:hover{transform:translate(-1px,-1px)}
+.proj span{font-size:.8rem}
+.proj .tag{margin-top:8px;display:inline-block}
+.skill{display:flex;justify-content:space-between;align-items:center;margin:10px 0;font-size:.9rem}
+.hearts{letter-spacing:3px;color:var(--pink)}
+.contact a{display:block;color:var(--ink);font-weight:700;margin:10px 0;font-size:.9rem;word-break:break-word}
+.dock{
+  position:fixed;left:0;right:0;bottom:0;background:var(--olive);border-top:2px solid var(--ink);
+  display:flex;justify-content:center;align-items:center;gap:14px;
+  padding:12px 12px calc(12px + env(safe-area-inset-bottom,0px));
+}
+.dock a{
+  width:48px;height:48px;border:2px solid var(--ink);border-radius:0;display:grid;place-items:center;
+  font-weight:700;color:#fff;text-decoration:none;box-shadow:3px 3px 0 var(--ink);font-size:.85rem;
+}
+.dock a:hover{transform:translateY(-3px)}
+.clock{position:absolute;right:14px;color:#fff;font-weight:700;font-size:.8rem}
+.menubar{display:flex;gap:18px;flex-wrap:wrap;padding:6px 14px;background:var(--paper);border-bottom:2px solid var(--ink);font-family:"Silkscreen","Space Mono",monospace;font-size:.72rem}
+.menubar b{margin-right:auto}
+.deco{display:flex;justify-content:center;gap:28px;font-size:2rem;margin:34px 0 14px;filter:contrast(1.3) saturate(.8)}
+.palette{display:flex;justify-content:center;flex-wrap:wrap;width:max-content;max-width:calc(100% - 32px);margin:0 auto;border:2px solid var(--ink);background:var(--paper);padding:4px}
+.palette i{width:20px;height:20px;border:1px solid var(--ink);margin:1px}
+.status{text-align:center;font-size:.72rem;margin:10px 16px 0}
+@media (max-width:600px){.clock{display:none}}
+</style>
+</head>
+<body>
+<div class="menubar" aria-hidden="true"><b>portfolio – Paint</b><span>Arquivo</span><span>Editar</span><span>Exibir</span><span>Imagem</span><span>Cores</span><span>Ajuda</span></div>
+<h1 class="title">PORTFÓLIO</h1>
+<p class="sub">clique nos ícones para abrir as janelas ↓</p>
+
+<nav class="icons" aria-label="Menu">
+  <button class="icon" data-open="sobre"><span class="g" style="background:var(--lime)">👩‍💻</span>sobre</button>
+  <button class="icon" data-open="projetos"><span class="g" style="background:var(--yellow)">📁</span>projetos</button>
+  <button class="icon" data-open="skills"><span class="g" style="background:var(--mint)">🛠️</span>skills</button>
+  <button class="icon" data-open="contato"><span class="g" style="background:var(--pink)">✉️</span>contato</button>
+</nav>
+
+<main class="wins">
+  <section class="win" id="sobre">
+    <div class="bar"><span>C:\LETICIA\sobre</span><button class="x" aria-label="Fechar">×</button></div>
+    <div class="body">
+      <div class="me">
+        <div class="avatar" aria-hidden="true">👩‍💻</div>
+        <div>
+          <div class="hi">oi! eu sou a</div>
+          <div class="name">Letícia<br>Fonseca</div>
+          <div class="role">DESENVOLVEDORA FRONT-END</div>
+        </div>
+      </div>
+      <p>Olá! Sou a Letícia, natural do Rio de Janeiro e atualmente moro em Minas Gerais. Sou estudante de Análise e Desenvolvimento de Sistemas (ADS) e tenho experiência na área de Tecnologia da Informação.</p><p>Estou sempre em busca de aprimorar meus conhecimentos, aprender novas tecnologias e contribuir com soluções eficientes.</p>
+      
+    </div>
+  </section>
+
+  <section class="win hidden" id="projetos">
+    <div class="bar"><span>C:\LETICIA\projetos</span><button class="x" aria-label="Fechar">×</button></div>
+    <div class="body">
+      <div class="proj"><div class="pi"><b>CasaXP</b><span>App de tarefas domésticas com XP e recompensas, com perfis de responsável e adolescente.</span><span class="tag d">React Native</span></div><div class="btns"><a class="btn" href="https://casaxp.vercel.app/" target="_blank" rel="noopener">Abrir site ↗</a><a class="btn gh" href="https://github.com/leticiafonsecaa/CasaXP-" target="_blank" rel="noopener">GitHub</a></div></div>
+      <div class="proj"><div class="pi"><b>Barbearia</b><span>Site para uma barbearia.</span><span class="tag">HTML</span></div><div class="btns"><a class="btn" href="https://barbearia-delta-teal.vercel.app/" target="_blank" rel="noopener">Abrir site ↗</a><a class="btn gh" href="https://github.com/leticiafonsecaa/Barbearia" target="_blank" rel="noopener">GitHub</a></div></div>
+      <div class="proj"><div class="pi"><b>Projeto Culturama</b><span>Projeto web em HTML.</span><span class="tag">HTML</span></div><div class="btns"><a class="btn" href="https://projeto-culturama-rho.vercel.app/" target="_blank" rel="noopener">Abrir site ↗</a><a class="btn gh" href="https://github.com/leticiafonsecaa/Projeto-Culturama" target="_blank" rel="noopener">GitHub</a></div></div>
+      <div class="proj"><div class="pi"><b>Alura Books</b><span>Projeto de estudo da Alura.</span><span class="tag">HTML</span></div><div class="btns"><a class="btn" href="https://alura-books-eight-sigma.vercel.app/" target="_blank" rel="noopener">Abrir site ↗</a><a class="btn gh" href="https://github.com/leticiafonsecaa/Alura-Books" target="_blank" rel="noopener">GitHub</a></div></div>
+      <a class="proj" href="https://github.com/leticiafonsecaa?tab=repositories" target="_blank" rel="noopener" style="text-align:center;justify-content:center"><b>ver todos os outros repositórios →</b></a>
+    </div>
+  </section>
+
+  <section class="win hidden" id="skills">
+    <div class="bar"><span>C:\LETICIA\skills</span><button class="x" aria-label="Fechar">×</button></div>
+    <div class="body">
+      <div class="skill"><span>HTML</span><span class="hearts">♥♥♥♥♡</span></div>
+      <div class="skill"><span>CSS</span><span class="hearts">♥♥♥♥♡</span></div>
+      <div class="skill"><span>JavaScript</span><span class="hearts">♥♥♥♡♡</span></div>
+      <div class="skill"><span>React</span><span class="hearts">♥♥♥♡♡</span></div>
+      <div class="skill"><span>TypeScript</span><span class="hearts">♥♥♡♡♡</span></div>
+      <div class="skill"><span>Java</span><span class="hearts">♥♥♡♡♡</span></div>
+      <div class="tags">
+        <span class="tag">HTML</span><span class="tag b">CSS</span><span class="tag c">JavaScript</span>
+        <span class="tag d">React</span><span class="tag e">TypeScript</span><span class="tag">Java</span><span class="tag b">Git</span><span class="tag c">GitHub</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="win hidden" id="contato">
+    <div class="bar"><span>C:\LETICIA\contato</span><button class="x" aria-label="Fechar">×</button></div>
+    <div class="body contact">
+      <a href="https://github.com/leticiafonsecaa" target="_blank" rel="noopener">🐙 github.com/leticiafonsecaa</a>
+      <a href="https://www.linkedin.com/in/let%C3%ADcia-de-brito-469567261" target="_blank" rel="noopener">💼 LinkedIn · Letícia</a>
+      <a href="https://instagram.com/fonseca_leleh" target="_blank" rel="noopener">📸 @fonseca_leleh</a>
+      <a href="#" onclick="return false">📍 Minas Gerais, Brasil</a>
+    </div>
+  </section>
+</main>
+
+<div class="deco" aria-hidden="true"><span>😊</span><span>⌛</span><span>💿</span><span>🌸</span></div>
+<div class="palette" aria-hidden="true"><i style="background:#000"></i><i style="background:#808080"></i><i style="background:#800000"></i><i style="background:#808000"></i><i style="background:#008000"></i><i style="background:#008080"></i><i style="background:#000080"></i><i style="background:#800080"></i><i style="background:#fff"></i><i style="background:#c0c0c0"></i><i style="background:#f00"></i><i style="background:#ff0"></i><i style="background:#0f0"></i><i style="background:#0ff"></i><i style="background:#00f"></i><i style="background:#f0f"></i></div>
+<p class="status">Para ajuda, clique nos ícones acima.</p>
+
+<footer class="dock">
+  <a href="https://www.linkedin.com/in/let%C3%ADcia-de-brito-469567261" target="_blank" rel="noopener" style="background:#2f7fb8" aria-label="LinkedIn">in</a>
+  <a href="https://github.com/leticiafonsecaa" target="_blank" rel="noopener" style="background:#2e3338" aria-label="GitHub">GH</a>
+  <a href="https://instagram.com/fonseca_leleh" target="_blank" rel="noopener" style="background:#e4405f" aria-label="Instagram">IG</a>
+  <span class="clock" id="clock"></span>
+</footer>
+
+<script>
+const wins = document.querySelectorAll('.win');
+document.querySelectorAll('[data-open]').forEach(function(b){
+  b.addEventListener('click', function(){
+    document.getElementById(b.dataset.open).classList.toggle('hidden');
+  });
+});
+wins.forEach(function(w){
+  w.querySelector('.x').addEventListener('click', function(){ w.classList.add('hidden'); });
+});
+function tick(){
+  var d = new Date();
+  document.getElementById('clock').textContent = d.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
+}
+tick(); setInterval(tick, 30000);
+</script>
+</body>
+</html>
